@@ -30,7 +30,7 @@ Reflection is a Java API that enables examining, modifying, and manipulating cla
 
 Reflection is commonly used in frameworks (Spring, Hibernate), serialization libraries, testing tools, and other scenarios requiring dynamic inspection or modification of code structures.
 
-Among the three implementations you have:
+Among the three implementations:
 
 1. Double-Check Locking: Vulnerable to reflection (with some protection)
 2. BillPugh: Vulnerable to reflection (without protection in current form)
