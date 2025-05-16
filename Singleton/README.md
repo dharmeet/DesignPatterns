@@ -30,6 +30,7 @@ Reflection is a Java API that enables examining, modifying, and manipulating cla
 
 ```markdown
 For the DoubleCheckLocking and BillPugh following can be done to create instance. 
+```
 
 ```java
 Constructor<DoubleCheckLockingSingleton> constructor = 
