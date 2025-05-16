@@ -28,14 +28,16 @@ Reflection is a Java API that enables examining, modifying, and manipulating cla
 4. Modify field values, even if they're private or final
 5. Examine class metadata (annotations, implemented interfaces, etc.)
 
+```markdown
 For the DoubleCheckLocking and BillPugh following can be done to create instance. 
-`
+
+```java
 Constructor<DoubleCheckLockingSingleton> constructor = 
     DoubleCheckLockingSingleton.class.getDeclaredConstructor();
 constructor.setAccessible(true);
 DoubleCheckLockingSingleton secondInstance = constructor.newInstance();
 
-`
+```
 
 Reflection is commonly used in frameworks (Spring, Hibernate), serialization libraries, testing tools, and other scenarios requiring dynamic inspection or modification of code structures.
 
