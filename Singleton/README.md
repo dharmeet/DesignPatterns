@@ -1,13 +1,3 @@
-Following commands to build and run:
-cd C:\DesignPatterns
-javac Singleton\*.java
-java -cp c:\ DesignPatterns.Singleton.SingletonDemo
-
-Key points here:
-1. Use the -cp (classpath) parameter to point to the root directory
-2. Use the fully qualified class name including the package path
-3. Make sure each Java file has the correct package declaration
-
 Singleton Patten: Ensures that class has only one instance and provide a global access point to it.
 Following are some of the applications of SingletonPattern:
 1. Logging Service
@@ -18,6 +8,16 @@ Following are some of the applications of SingletonPattern:
 6. Load Balancer
 7. File System Manager
 8. Game Manager -> Game state manager to track scores, levels and settings.
+
+Following commands to build and run:
+1. cd C:\DesignPatterns
+2.  javac Singleton\*.java
+3. java -cp c:\ DesignPatterns.Singleton.SingletonDemo
+
+Key points here:
+1. Use the -cp (classpath) parameter to point to the root directory
+2. Use the fully qualified class name including the package path
+3. Make sure each Java file has the correct package declaration
 
 What is Reflection in Java?
 Reflection is a Java API that enables examining, modifying, and manipulating classes, interfaces, fields, and methods at runtime. It allows code to:
