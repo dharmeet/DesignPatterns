@@ -36,7 +36,7 @@ public class TextEditor {
             }
             
             // Get flyweight character
-            Character character = CharacterFactory.getCharacter(symbol);
+            CharacterInterface character = CharacterFactory.getCharacter(symbol);
             
             // Display with extrinsic state (font, size, position)
             character.display(font, fontSize, x, y);

@@ -1,7 +1,9 @@
 package DesignPatterns.Flyweight;
 
+import DesignPatterns.Flyweight.CharacterInterface;
+
 // Concrete Flyweight - stores intrinsic state (character value)
-public class CharacterImpl implements Character {
+public class CharacterImpl implements CharacterInterface {
     private final char symbol;
     
     public CharacterImpl(char symbol) {

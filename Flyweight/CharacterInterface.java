@@ -1,6 +1,6 @@
 package DesignPatterns.Flyweight;
 
 // Flyweight interface
-public interface Character {
+public interface CharacterInterface {
     void display(String font, int size, int x, int y);
 }
