@@ -14,4 +14,10 @@
 | Write through cache | Writing in cache and DB, returning success if both are successful. Writes are slower but reads are much faster. | Read-heavy system, E-commerce inventory update |
 | Write back cache | First write in cache, then asynchronously sync with DB. Very high throughput and very low latency. | Social media feeds/counters (eg. likes, count), Video streaming watch history |
 | Write around cache | Writes are done directly in the DB, can use TTL to keep cache in sync with the DB | Logging system, Infrequently accessed archival data |
+
+
+## Case Studies
+
+S. No. | Problem | Approach |
+1 | Submit problem on Hackerrank, scaler (etc.) the input and output file is stored in File Storage which can take 2 seconds to fetch | Reading the file from Hard Disk takes 40 ms and reading a record from DB takes 50 ms. Store the file metadata in DB, with problem_id, input_filepath, input_file_updated_at, input_file_created_at and keep the filename as (problem_id)_(updated_at)_input.txt, now when the submission comes check the updated_at in the DB, if the file is present in local cache we are good, else fetch it from the filesystem. |
    
