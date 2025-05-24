@@ -19,7 +19,8 @@
 | Master slave highly available not eventually consistent | Master takes the write, if successful return success. Try to sync with slaves. | Log system, like Splunk, throughput is high we need to process the logs even if we lose some logs, it's ok. |
 | Master slave highly available and eventually consistent | Master takes the write and if one slave writes success is returned. | FB newsfeed and storing posts, we don't want post be lost, they could be delayed but eventually sync up. |
 | Master slave highly consistent | Master and all slaves take the writes, if all have written then only return success. | Banking system. |
-
+| SQL | Normalization and ACID transactions are the advantages of SQL. On the other hand, fixed schema might not fit every use case, also if we need to do DB sharding then it nullifies the advantages of sharding. | |
+| Points to note while choosing sharding key | 1. Load should be evenly distributed. 2. Most frequent operations should be performed efficiently. 3. Minimum machines should be updated when most frequent operations are performed. 4. Minimize redundancy as much as possible.  | Banking system, user_id is better sharding key then city_id. Uber-like system, use case is to search for nearby drivers, CityId would be a good sharding key compared to driverId. Slack (Groups-heavy system) GroupId is the good sharding key. IRCTC Sharding key - primary problem is to avoid double-booked tickets, load balancing during tatkal booking. TrainId is a good sharding key, load gets distributed among all machines, tomorrow there would be lot of trains, within a train it knows which user is allocated a particular berth. |
 
 
 ## Case Studies
