@@ -18,6 +18,6 @@
 
 ## Case Studies
 
-S. No. | Problem | Approach |
-1 | Submit problem on Hackerrank, scaler (etc.) the input and output file is stored in File Storage which can take 2 seconds to fetch | Reading the file from Hard Disk takes 40 ms and reading a record from DB takes 50 ms. Store the file metadata in DB, with problem_id, input_filepath, input_file_updated_at, input_file_created_at and keep the filename as (problem_id)_(updated_at)_input.txt, now when the submission comes check the updated_at in the DB, if the file is present in local cache we are good, else fetch it from the filesystem. |
+| S. No. | Problem | Approach |
+| 1 | Submit problem on Hackerrank, scaler (etc.) the input and output file is stored in File Storage which can take 2 seconds to fetch | Reading the file from Hard Disk takes 40 ms and reading a record from DB takes 50 ms. Store the file metadata in DB, with problem_id, input_filepath, input_file_updated_at, input_file_created_at and keep the filename as (problem_id)_(updated_at)_input.txt, now when the submission comes check the updated_at in the DB, if the file is present in local cache we are good, else fetch it from the filesystem. |
    
