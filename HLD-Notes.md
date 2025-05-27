@@ -24,7 +24,18 @@
 | Types of NoSQL DB | 1. Key-value NoSQL DBs (eg. DynamoDB, Redis etc.)  2. Document DBs structures data in JSON format, every record is JSON and all records can have different attributes (eg. MongoDB, AWS ElasticSearch, Azure Cosmos).  3. Column-Family Storage (eg. Cassandra HBase) - RowID is the sharding key, within RowID there are bunch of column families which contains records, and record have timestamp at the beginning. | Document DB is mostly used in ecommerce applications. Column Family allows prefix search and fetching top or latest X entries efficiently. Twitter-Hashtag data storage - Column-family is a better choice, as with Key Value it will fetch all the tweets for given hashtag, whereas we want only 20 pagination. Live scores of Sports/Matches - Key Value pair is the best choice. Current location of Cab in Uber-like Application - if location history is needed column family is the best choice, if only current location is needed key value DB is the best choice. |
 | Manual Sharding | Order of priority for extra machines: maintain the replication level > create a new shard > keep them in standby. Shard Creation involves Staging Phase when the shard is not live, and then involves the Real Phase in which shard is live and catches up the data between T1 and T2. | NameNode (Hadoop), JobTracker, HBase Master |
 | Multi Master | Every machine in the system is a master. Tunable consistency, R (minimum number of read operations required before calling it successful) W (minimum number of write operations required before calling it successful) X (replication level). R <= X and W <= X. Lower R + W, lower consistency, higher R + W higher consistency. If R + W > X then it is highly consistent system. | DynamoDB, Cassandra |
-| Approach a problem | 1. Figure out the MVP.  2. Estimate scale a. Storage requirements (Is sharding needed?) b. Read-heavy or write-heavy system. (Write operations block read requests, as they acquire a lock on impacted rows, if system is both read and write heavy then figure out how to absorb reads or writes somewhere else.) c. QPS  3. Design Goal a. Highly consistent or Highly Available. b. Latency requirements c. Can we afford data loss?  4. API (the choice of sharding key may depend on the API parameters.)| |
+
+## How to approach a system design problem:
+1. Figure out the MVP.  
+2. Estimate scale 
+    a. Storage requirements (Is sharding needed?) 
+    b. Read-heavy or write-heavy system. (Write operations block read requests, as they acquire a lock on impacted rows, if system is both read and write heavy then figure out how to absorb reads or writes somewhere else.) 
+    c. QPS  
+3. Design Goal 
+    a. Highly consistent or Highly Available. 
+    b. Latency requirements 
+    c. Can we afford data loss?  
+4. API (the choice of sharding key may depend on the API parameters.)
 
 ## Case Studies
 
